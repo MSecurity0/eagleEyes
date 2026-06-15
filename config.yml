@@ -1,0 +1,60 @@
+# EagleEyes v5 Configuration
+
+scan:
+  concurrency: 200
+  timeout: 10
+  max_retries: 2
+  confidence_threshold: 0.5
+  output_dir: "./eagleeyes_results"
+
+masscan:
+  path: "masscan"
+  rate: 50000
+  ports_fast: "1-1000"
+  interface: null
+
+nmap:
+  path: "nmap"
+  timing: "T4"
+  max_parallelism: 50
+  scripts_discovery: "nbstat,smb-os-discovery,ssh-hostkey"
+  scripts_service: "banner,http-title,ssl-cert"
+
+arp_scan:
+  path: "arp-scan"
+  interface: null
+
+apis:
+  shodan:
+    key: null
+    internetdb_url: "https://internetdb.shodan.io"
+    api_url: "https://api.shodan.io"
+    rate_limit: 1
+  censys:
+    api_id: null
+    api_secret: null
+    rate_limit: 0.4
+  ipinfo:
+    token: null
+    url: "https://ipinfo.io"
+    rate_limit: 2
+  crt_sh:
+    url: "https://crt.sh"
+    rate_limit: 2
+  bgp:
+    url: "https://api.bgpview.io"
+    rate_limit: 2
+
+output:
+  color: true
+  verbose: false
+  formats:
+    - txt
+    - json
+    - csv
+    - html
+
+rate_limits:
+  dns_concurrent: 100
+  http_concurrent: 50
+  ssl_concurrent: 50

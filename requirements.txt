@@ -1,0 +1,12 @@
+# EagleEyes v5 Python dependencies
+aiohttp>=3.9.0
+aiofiles>=23.2.1
+pyyaml>=6.0.1
+aiodns>=3.1.1
+colorama>=0.4.6
+
+# System tools (install separately):
+#   sudo apt install nmap masscan arp-scan
+#
+# Optional for extended subdomain discovery:
+#   go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
